@@ -1,0 +1,31 @@
+#importing time library
+import time
+import datetime
+ 
+# creating class named count_down
+def count_down(H, M, S):
+ 
+    # formula to calculate total number of seconds
+    seconds_ = H * 3600 + M * 60 + S
+ 
+    # using while loop 
+    while seconds_ > 0:
+ 
+        timer = datetime.timedelta(seconds = seconds_)
+      
+        print(timer, end="\r")
+ 
+        # delays the time interval by 1 seconds
+        time.sleep(1)
+ 
+        # Reduces total time by 1 second
+        seconds_ -= 1
+      
+      # Message after the completion of timer
+    print("BEEP BEEP!!!")
+ 
+# asking value  for hours, minutes, seconds from user
+H = input("Enter value for  hours: ")
+M = input("Enter value for  minutes: ")
+S = input("Enter value for  seconds: ")
+count_down(int(H), int(M), int(S))
